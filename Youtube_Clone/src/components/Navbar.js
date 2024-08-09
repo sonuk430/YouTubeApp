@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import { SEARCH_SUGGESTIONS_API } from "../constant/youtube";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [input, setInput] = useState("");
@@ -32,9 +33,11 @@ const Navbar = () => {
   const showSuggestion = async () => {
     try {
       const res = await axios.get(SEARCH_SUGGESTIONS_API + input);
+      console.log(res.data);
+
       dispatch(setSearchSuggestion(res?.data[1]));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -61,6 +64,7 @@ const Navbar = () => {
             size="24px"
             className="cursor-pointer"
           />
+
           <img
             className="px-4"
             width={"115px"}
@@ -90,7 +94,10 @@ const Navbar = () => {
               <ul>
                 {searchSuggestion.map((text, idx) => {
                   return (
-                    <div className="flex items-center px-4 hover:bg-gray-100">
+                    <div
+                      key={idx}
+                      className="flex items-center px-4 hover:bg-gray-100"
+                    >
                       <CiSearch size="24px" />
                       <li className="px-2 py-1 cursor-pointer text-md font-medium">
                         {text}

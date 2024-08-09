@@ -30,7 +30,7 @@ const Watch = () => {
       );
       setSingleVideo(res?.data?.items[0]);
     } catch (error) {
-      console.log(error);
+      //   console.log(error);
     }
   };
 
