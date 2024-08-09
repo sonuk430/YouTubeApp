@@ -23,6 +23,10 @@ A front-end only clone of YouTube built with React, Redux, and Tailwind CSS. Thi
 - **React Router**: For navigation between different components
 - **Axios**: For making HTTP requests to fetch video data
 
+## Live Demo
+
+[Check out the live demo here!](https://you-tube-app-six.vercel.app/)
+
 ## UI
 
 ![alt text](image.png)
